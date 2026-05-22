@@ -102,6 +102,24 @@ npm run validate:example
 npm run build:example
 ```
 
+## Lokal testharness
+
+Repoet inneholder en lokal testharness under `test/`.
+
+- `test/issues/` inneholder markdownfiler pa formen `issue-5.md`
+- filnavnet brukes som issue ID
+- `test/labels.json` mapper issue ID til labels
+
+Kjor disse kommandoene for a validere og bygge fra lokale testissues:
+
+```sh
+npm run validate:test
+npm run build:test
+npm run nightly:test
+```
+
+Output havner i `dist/test-harness/`.
+
 ## Fremtidig retning
 
 Issue parsing er valgt som en enkel v1-losning. Pa sikt kan innmeldingskanalen byttes ut, for eksempel med PR-baserte event-filer eller et lite internt skjema, uten at portalens publiseringsmodell ma endres.

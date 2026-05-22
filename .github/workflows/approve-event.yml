@@ -11,5 +11,10 @@ permissions:
 jobs:
   publish:
     if: github.event.label.name == 'status:approved'
+    permissions:
+      contents: read
+      issues: read
+      pages: write
+      id-token: write
     uses: ./.github/workflows/build-site.yml
     secrets: inherit

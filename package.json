@@ -4,7 +4,10 @@
   "type": "module",
   "scripts": {
     "validate:example": "node scripts/validate-event.mjs --body-file docs/example-issue.md",
-    "build:example": "node scripts/build-site.mjs --issues-file data/example-issues.json"
+    "build:example": "node scripts/build-site.mjs --issues-file data/example-issues.json",
+    "validate:test": "node scripts/validate-test-issues.mjs --issues-dir test/issues --labels-file test/labels.json --write-json dist/test-harness/validation-report.json",
+    "build:test": "node scripts/build-site.mjs --issues-dir test/issues --labels-file test/labels.json --out-dir dist/test-harness",
+    "nightly:test": "node scripts/simulate-nightly.mjs --issues-dir test/issues --labels-file test/labels.json --write-json dist/test-harness/nightly-report.json"
   },
   "engines": {
     "node": ">=20"

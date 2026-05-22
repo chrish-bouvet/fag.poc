@@ -4,6 +4,7 @@ import process from "node:process";
 
 import { listIssues } from "./lib/github.mjs";
 import { toCanonicalEvent, writeJson } from "./lib/event.mjs";
+import { loadFixtureIssues } from "./lib/test-harness.mjs";
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
@@ -12,11 +13,12 @@ async function main() {
   const publishable = events.filter((event) =>
     ["status:approved", "status:historical", "status:cancelled"].includes(event.status)
   );
+  const outDir = args.outDir ?? "dist";
 
-  await mkdir("dist/events", { recursive: true });
-  await writeJson("dist/events.json", publishable);
-  await Promise.all(publishable.map((event) => writeEventPage(event)));
-  await writeFile("dist/index.html", renderIndexPage(publishable));
+  await mkdir(path.join(outDir, "events"), { recursive: true });
+  await writeJson(path.join(outDir, "events.json"), publishable);
+  await Promise.all(publishable.map((event) => writeEventPage(event, outDir)));
+  await writeFile(path.join(outDir, "index.html"), renderIndexPage(publishable));
 }
 
 function parseArgs(argv) {
@@ -26,12 +28,25 @@ function parseArgs(argv) {
     if (value === "--issues-file") {
       args.issuesFile = argv[index + 1];
       index += 1;
+    } else if (value === "--issues-dir") {
+      args.issuesDir = argv[index + 1];
+      index += 1;
+    } else if (value === "--labels-file") {
+      args.labelsFile = argv[index + 1];
+      index += 1;
+    } else if (value === "--out-dir") {
+      args.outDir = argv[index + 1];
+      index += 1;
     }
   }
   return args;
 }
 
 async function loadIssues(args) {
+  if (args.issuesDir) {
+    return loadFixtureIssues({ issuesDir: args.issuesDir, labelsFile: args.labelsFile });
+  }
+
   if (args.issuesFile) {
     return JSON.parse(await readFile(args.issuesFile, "utf8"));
   }
@@ -39,8 +54,8 @@ async function loadIssues(args) {
   return listIssues({ state: "all" });
 }
 
-async function writeEventPage(event) {
-  const filePath = path.join("dist", "events", `${event.slug}.html`);
+async function writeEventPage(event, outDir) {
+  const filePath = path.join(outDir, "events", `${event.slug}.html`);
   await writeFile(filePath, renderEventPage(event));
 }
 
