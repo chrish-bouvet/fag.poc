@@ -1,0 +1,12 @@
+[
+  {
+    "number": 101,
+    "title": "[Arrangement] Fagkveld om universell utforming i moderne frontend",
+    "state": "open",
+    "labels": [
+      { "name": "source:issue-form" },
+      { "name": "status:approved" }
+    ],
+    "body": "### Tittel\n\nFagkveld om universell utforming i moderne frontend\n\n### Ansvarlig\n\nTeam Frontend Oslo\n\n### Fagmiljo\n\nFrontend\n\n### Kort beskrivelse for infoskjermer\n\nPraktisk fagkveld om tilgjengelighet, designvalg og testing i moderne frontend.\n\n### Tags\n\nfrontend, universell utforming, react, testing\n\n### Dato og klokkeslett\n\n2026-09-15 17:00\n\n### Link til pamelding\n\nhttps://example.bouvet.no/pamelding/frontend-uu\n\n### Beskrivelse\n\nVi inviterer til en fagkveld der vi gar gjennom hvordan universell utforming kan bygges inn som en naturlig del av frontend-arbeidet.\n\nVi ser pa konkrete eksempler fra komponentbibliotek, semantisk HTML, tastaturnavigasjon og testing med skjermleser.\n\nArrangementet passer for bade utviklere og designere, og det blir tid til sporsmal og erfaringsdeling."
+  }
+]

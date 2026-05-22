@@ -1,0 +1,12 @@
+{
+  "name": "fag-bouvet-no",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:example": "node scripts/validate-event.mjs --body-file docs/example-issue.md",
+    "build:example": "node scripts/build-site.mjs --issues-file data/example-issues.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

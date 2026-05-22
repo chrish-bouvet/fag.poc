@@ -1,0 +1,15 @@
+name: Approve Event
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  publish:
+    if: github.event.label.name == 'status:approved'
+    uses: ./.github/workflows/build-site.yml
+    secrets: inherit

@@ -1,0 +1,73 @@
+name: Nytt arrangement
+description: Meld inn et faglig arrangement for intern publisering i portalen.
+title: "[Arrangement] "
+labels:
+  - source:issue-form
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Tittel
+      placeholder: For eksempel Fagkveld om universell utforming
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Ansvarlig
+      placeholder: For eksempel Team Frontend Oslo
+    validations:
+      required: true
+
+  - type: input
+    id: community
+    attributes:
+      label: Fagmiljø
+      placeholder: For eksempel Frontend
+    validations:
+      required: true
+
+  - type: input
+    id: short_description
+    attributes:
+      label: Kort beskrivelse for infoskjermer
+      description: Kort tekst pa en linje.
+      placeholder: Praktisk fagkveld om tilgjengelighet, testing og gode frontendvalg.
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Skriv kommaseparerte tags, for eksempel frontend, react, uu
+      placeholder: frontend, react, uu
+    validations:
+      required: true
+
+  - type: input
+    id: datetime
+    attributes:
+      label: Dato og klokkeslett
+      description: "Format: YYYY-MM-DD HH:mm. Tolkes alltid som norsk tid (Europe/Oslo)."
+      placeholder: 2026-09-15 17:00
+    validations:
+      required: true
+
+  - type: input
+    id: signup_url
+    attributes:
+      label: Link til påmelding
+      placeholder: https://eksempel.no/påmelding
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Beskrivelse
+      description: Full beskrivelse av arrangementet.
+      placeholder: Beskriv innhold, malgruppe og hva deltakerne kan forvente.
+    validations:
+      required: true
