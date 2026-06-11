@@ -4,7 +4,7 @@
 
 Portalen gjor det enkelt a melde inn, kvalitetssikre og publisere faglige arrangementer internt ved hjelp av GitHub-native verktoy.
 
-## Formal
+## Formal   
 
 Losningen skal:
 
