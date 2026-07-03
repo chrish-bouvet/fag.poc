@@ -2,7 +2,7 @@
 
 Fagkveld om universell utforming i moderne frontend 
  
-### Ansvarlig   
+### Ansvarlig
 
 Team Frontend Oslo2
 
