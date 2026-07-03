@@ -1,7 +1,7 @@
 ### Tittel 
 
 Fagkveld om universell utforming i moderne frontend 
-
+ 
 ### Ansvarlig
 
 Team Frontend Oslo2
