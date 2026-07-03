@@ -1,6 +1,6 @@
 ### Tittel 
 
-Fagkveld om universell utforming i moderne frontend
+Fagkveld om universell utforming i moderne frontend 
 
 ### Ansvarlig
 
